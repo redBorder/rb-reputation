@@ -24,7 +24,7 @@
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
 
     <appender name="RollingAppender" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="/var/log/rb-malware-list/malware_list.log" />
+        <param name="File" value="/opt/rb/var/log/rb-malware-list/mwlist.log" />
         <param name="DatePattern" value="'.'yyyy-MM-dd" />
         <param name="MaxBackupIndex" value="5" />
         <param name="MaxFileSize" value="50MB" />
