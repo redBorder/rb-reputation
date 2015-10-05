@@ -113,7 +113,7 @@
                     <appendAssemblyId>false</appendAssemblyId>
                     <archive>
                         <manifest>
-                            <mainClass>net.redborder.malware.MalwareREST</mainClass>
+                            <mainClass>net.redborder.malware.MalwareService</mainClass>
                         </manifest>
                     </archive>
                 </configuration>
@@ -152,7 +152,7 @@
                 <artifactId>exec-maven-plugin</artifactId>
                 <version>1.4.0</version>
                 <configuration>
-                    <mainClass>net.redborder.malware.MalwareREST</mainClass>
+                    <mainClass>net.redborder.malware.MalwareService</mainClass>
                 </configuration>
             </plugin>
 
