@@ -1,4 +1,5 @@
 import junit.framework.TestCase;
+import net.redborder.malware.MalwareController;
 import net.redborder.malware.utils.ZkUtils;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
@@ -17,12 +18,17 @@ import java.net.UnknownHostException;
 public class ZooKeeperManagerTest extends TestCase {
 
     TestingServer zooKeeperServer;
+    CuratorFramework curatorClient;
 
     @Before
     public void init() {
         try {
             zooKeeperServer = new TestingServer();
             zooKeeperServer.start();
+
+            curatorClient = CuratorFrameworkFactory.newClient("localhost:" + zooKeeperServer.getPort(), new RetryNTimes(Integer.MAX_VALUE, 30000));
+            curatorClient.start();
+
         } catch (Exception e) {
             e.printStackTrace();
         }
@@ -40,18 +46,11 @@ public class ZooKeeperManagerTest extends TestCase {
 
     @Test
     public void connectCorrectly() {
-
-        CuratorFramework curatorClient = CuratorFrameworkFactory.newClient("localhost:" + zooKeeperServer.getPort(), new RetryNTimes(Integer.MAX_VALUE, 30000));
         assertNotNull(curatorClient);
-
-
     }
 
     @Test
     public void createPathCorrectly() {
-
-        CuratorFramework curatorClient = CuratorFrameworkFactory.newClient("localhost:" + zooKeeperServer.getPort(), new RetryNTimes(Integer.MAX_VALUE, 30000));
-        curatorClient.start();
 
         ZkUtils zkUtils = null;
 
