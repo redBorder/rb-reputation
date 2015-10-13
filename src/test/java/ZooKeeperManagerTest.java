@@ -1,5 +1,4 @@
 import junit.framework.TestCase;
-import net.redborder.malware.MalwareController;
 import net.redborder.malware.utils.ZkUtils;
 import org.apache.curator.framework.CuratorFramework;
 import org.apache.curator.framework.CuratorFrameworkFactory;
