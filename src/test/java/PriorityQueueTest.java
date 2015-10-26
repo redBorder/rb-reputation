@@ -6,7 +6,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import java.util.Comparator;
+import java.util.*;
 import java.util.concurrent.PriorityBlockingQueue;
 
 @RunWith(MockitoJUnitRunner.class)
@@ -32,7 +32,29 @@ public class PriorityQueueTest extends TestCase {
         assertTrue(refService.isReady());
         assertEquals(3, queue.size());
 
-        System.out.println(queue.toString());
+//        System.out.println(queue.toString());
+    }
+
+    @Test
+    public void priorityMap(){
+        SortedMap<Integer, LinkedList<String>> map = new TreeMap<>();
+
+        for(int i = 0; i < 5; i++){
+
+            int randomPreference = new Random().nextInt(3) + 1;
+
+            if(!map.containsKey(randomPreference)){
+                map.put(randomPreference, new LinkedList<String>());
+            }
+
+            map.get(randomPreference).push("Value : " + new Random().nextInt(100));
+
+        }
+
+        System.out.println(map.toString());
+
+
+
     }
 
     @Test
@@ -69,12 +91,12 @@ public class PriorityQueueTest extends TestCase {
         @Override
         public int compare(Service o1, Service o2) {
 
-            System.out.println(o1.toString());
-            System.out.println(o2.toString());
+//            System.out.println(o1.toString());
+//            System.out.println(o2.toString());
             int priority = o1.getPriority() - o2.getPriority();
             int ready = (o1.isReady() ? 1 : 0) - (o2.isReady() ? 1 : 0);
-            System.out.println("Priority : " + priority);
-            System.out.println("Ready : " + ready);
+//            System.out.println("Priority : " + priority);
+//            System.out.println("Ready : " + ready);
 
             return o1.getPriority() - o2.getPriority();
         }
