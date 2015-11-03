@@ -37,6 +37,5 @@ public class IncrementalListTest extends TestCase{
 
         System.out.println("Incremental : " + IncrementalList.getCurrent(IncrementalList.List.INCREMENTAL));
         System.out.println("Revision : " + IncrementalList.getCurrent(IncrementalList.List.REVISION));
-        System.out.println("Store : " + IncrementalList.getCurrent(IncrementalList.List.STORE));
     }
 }
