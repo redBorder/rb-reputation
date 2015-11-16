@@ -26,7 +26,7 @@
     <!-- General application log -->
     <appender name="ReputationEngine" class="org.apache.log4j.DailyRollingFileAppender">
         <!--<param name="File" value="/opt/rb/var/log/rb-malware-list/mwlist.log"/>-->
-        <param name="File" value="/Users/Chorro/Desktop/mw-rengine.log"/>
+        <param name="File" value="/opt/rb/var/log/rb-malware-list/mw-rengine.log"/>
         <param name="DatePattern" value="'.'yyyy-MM-dd"/>
         <param name="MaxBackupIndex" value="5"/>
         <param name="MaxFileSize" value="50MB"/>
@@ -38,7 +38,7 @@
     <!-- Environment log-->
     <appender name="Environment" class="org.apache.log4j.DailyRollingFileAppender">
         <!--<param name="File" value="/opt/rb/var/log/rb-malware-list/mwlist.log"/>-->
-        <param name="File" value="/Users/Chorro/Desktop/mw-environment.log"/>
+        <param name="File" value="/opt/rb/var/log/rb-malware-list/mw-environment.log"/>
         <param name="DatePattern" value="'.'yyyy-MM-dd"/>
         <param name="MaxBackupIndex" value="5"/>
         <param name="MaxFileSize" value="50MB"/>
