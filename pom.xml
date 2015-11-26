@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>net.redborder</groupId>
-    <artifactId>rb-malware-list</artifactId>
+    <artifactId>rb-reputation</artifactId>
     <version>0.0.2-SNAPSHOT</version>
 
     <properties>
@@ -11,15 +11,11 @@
     </properties>
 
     <scm>
-        <developerConnection>scm:git:git@gitlab.redborder.lan:bigdata/rb-malware-list.git</developerConnection>
+        <developerConnection>scm:git:git@gitlab.redborder.lan:bigdata/rb-reputation.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
     <repositories>
-        <repository>
-            <id>my-local-repo</id>
-            <url>file://${user.home}/.m2/repository</url>
-        </repository>
         <repository>
             <id>apache-releases</id>
             <url>https://repository.apache.org/content/groups/public</url>
