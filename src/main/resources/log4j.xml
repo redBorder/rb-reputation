@@ -25,8 +25,7 @@
 
     <!-- General application log -->
     <appender name="ReputationEngine" class="org.apache.log4j.DailyRollingFileAppender">
-        <!--<param name="File" value="/opt/rb/var/log/rb-malware-list/mwlist.log"/>-->
-        <param name="File" value="/opt/rb/var/log/rb-malware-list/mw-rengine.log"/>
+        <param name="File" value="/var/log/rb-reputation/current"/>
         <param name="DatePattern" value="'.'yyyy-MM-dd"/>
         <param name="MaxBackupIndex" value="5"/>
         <param name="MaxFileSize" value="50MB"/>
@@ -36,9 +35,8 @@
     </appender>
 
     <!-- Environment log-->
-    <appender name="Environment" class="org.apache.log4j.DailyRollingFileAppender">
-        <!--<param name="File" value="/opt/rb/var/log/rb-malware-list/mwlist.log"/>-->
-        <param name="File" value="/opt/rb/var/log/rb-malware-list/mw-environment.log"/>
+    <appender name="Audit" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="/var/log/rb-reputation/audit"/>
         <param name="DatePattern" value="'.'yyyy-MM-dd"/>
         <param name="MaxBackupIndex" value="5"/>
         <param name="MaxFileSize" value="50MB"/>
@@ -56,12 +54,11 @@
     </appender>
 
     <logger name="audit" additivity="false">
-        <appender-ref ref="Environment"/>
+        <appender-ref ref="Audit"/>
     </logger>
 
     <root>
         <priority value="info"/>
         <appender-ref ref="ReputationEngine"/>
-        <appender-ref ref="Console"/>
     </root>
 </log4j:configuration>
