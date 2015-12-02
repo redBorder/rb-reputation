@@ -25,6 +25,16 @@
             <name>Scala-tools Maven2 Repository</name>
             <url>https://oss.sonatype.org/content/groups/scala-tools</url>
         </repository>
+        <repository>
+            <id>internal</id>
+            <name>readBorder Internal Repository</name>
+            <url>http://archiva.redborder.lan/repository/internal/</url>
+        </repository>
+        <repository>
+            <id>snapshots</id>
+            <name>redBorder Snapshot Repository</name>
+            <url>http://archiva.redborder.lan/repository/snapshots/</url>
+        </repository>
     </repositories>
 
     <dependencies>
