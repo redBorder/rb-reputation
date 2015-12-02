@@ -4,7 +4,7 @@
 
     <groupId>net.redborder</groupId>
     <artifactId>rb-reputation</artifactId>
-    <version>0.0.3-SNAPSHOT</version>
+    <version>0.0.4-SNAPSHOT</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -25,10 +25,19 @@
             <name>Scala-tools Maven2 Repository</name>
             <url>https://oss.sonatype.org/content/groups/scala-tools</url>
         </repository>
+        <repository>
+            <id>internal</id>
+            <name>readBorder Internal Repository</name>
+            <url>http://archiva.redborder.lan/repository/internal/</url>
+        </repository>
+        <repository>
+            <id>snapshots</id>
+            <name>redBorder Snapshot Repository</name>
+            <url>http://archiva.redborder.lan/repository/snapshots/</url>
+        </repository>
     </repositories>
 
     <dependencies>
-
         <!-- Spark Server (Java 7)-->
         <dependency>
             <groupId>com.sparkjava</groupId>
@@ -71,25 +80,115 @@
             </exclusions>
         </dependency>
 
-        <!-- Jackson JSON -->
+        <!-- Jackson -->
         <dependency>
-            <groupId>org.codehaus.jackson</groupId>
-            <artifactId>jackson-jaxrs</artifactId>
-            <version>1.8.5</version>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-json-provider</artifactId>
+            <version>2.6.3</version>
         </dependency>
+
+        <!-- YAML -->
+
+        <dependency>
+            <groupId>org.jyaml</groupId>
+            <artifactId>jyaml</artifactId>
+            <version>1.3</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.6.3</version>
+        </dependency>
+
 
         <!-- Curator -->
         <dependency>
             <groupId>org.apache.curator</groupId>
             <artifactId>curator-framework</artifactId>
-            <version>2.6.0</version>
+            <version>2.9.0</version>
         </dependency>
 
         <dependency>
             <groupId>org.apache.curator</groupId>
             <artifactId>curator-recipes</artifactId>
-            <version>2.6.0</version>
+            <version>2.9.0</version>
         </dependency>
+
+         <!-- Testing -->
+
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-all</artifactId>
+            <version>1.10.19</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.curator</groupId>
+            <artifactId>curator-test</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.kafka</groupId>
+            <artifactId>kafka_2.10</artifactId>
+            <version>0.8.2.0</version>
+            <classifier>test</classifier>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- Maths -->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-math3</artifactId>
+            <version>3.5</version>
+        </dependency>
+
+        <!-- VirusTotal API-->
+        <dependency>
+            <groupId>com.kanishka.api</groupId>
+            <artifactId>VirustotalPublicV2.0</artifactId>
+            <version>2.0</version>
+        </dependency>
+
+        <!-- SLF4J -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.2</version>
+        </dependency>
+
+        <!-- Guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>18.0</version>
+        </dependency>
+
+        <!-- Lambdaj -->
+        <dependency>
+            <groupId>com.googlecode.lambdaj</groupId>
+            <artifactId>lambdaj</artifactId>
+            <version>2.3.3</version>
+        </dependency>
+
+
+
+
 
     </dependencies>
 
@@ -126,7 +225,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.3</version>
+                <version>3.1</version>
                 <configuration>
                     <source>1.7</source>
                     <target>1.7</target>

@@ -23,18 +23,42 @@
 <!DOCTYPE log4j:configuration SYSTEM "log4j.dtd">
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
 
-    <appender name="RollingAppender" class="org.apache.log4j.DailyRollingFileAppender">
-        <param name="File" value="/opt/rb/var/log/rb-malware-list/mwlist.log" />
-        <param name="DatePattern" value="'.'yyyy-MM-dd" />
-        <param name="MaxBackupIndex" value="5" />
-        <param name="MaxFileSize" value="50MB" />
+    <!-- General application log -->
+    <appender name="ReputationEngine" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="/var/log/rb-reputation/current"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="MaxBackupIndex" value="5"/>
+        <param name="MaxFileSize" value="50MB"/>
         <layout class="org.apache.log4j.PatternLayout">
-            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %c{1} [%p] %m%n" />
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
         </layout>
     </appender>
 
+    <!-- Environment log-->
+    <appender name="Audit" class="org.apache.log4j.DailyRollingFileAppender">
+        <param name="File" value="/var/log/rb-reputation/audit"/>
+        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
+        <param name="MaxBackupIndex" value="5"/>
+        <param name="MaxFileSize" value="50MB"/>
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %C{1} [%p] : %m%n"/>
+        </layout>
+    </appender>
+
+    <!-- Console application log-->
+    <appender name="Console" class="org.apache.log4j.ConsoleAppender">
+        <layout class="org.apache.log4j.PatternLayout">
+            <param name="Target" value="System.out"/>
+            <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
+        </layout>
+    </appender>
+
+    <logger name="audit" additivity="false">
+        <appender-ref ref="Audit"/>
+    </logger>
+
     <root>
-        <priority value="info" />
-        <appender-ref ref="RollingAppender"/>
+        <priority value="info"/>
+        <appender-ref ref="ReputationEngine"/>
     </root>
 </log4j:configuration>
