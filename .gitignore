@@ -3,5 +3,5 @@
 /target
 pom.xml.releaseBackup
 release.properties
-.DS_Store
 test
+.DS_Store
