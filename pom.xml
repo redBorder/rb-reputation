@@ -4,7 +4,7 @@
 
     <groupId>net.redborder</groupId>
     <artifactId>rb-reputation</artifactId>
-    <version>1.1.1</version>
+    <version>1.1.2-SNAPSHOT</version>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -12,7 +12,7 @@
 
     <scm>
         <developerConnection>scm:git:git@gitlab.redborder.lan:bigdata/rb-reputation.git</developerConnection>
-        <tag>rb-reputation-1.1.1</tag>
+        <tag>HEAD</tag>
     </scm>
 
     <repositories>
