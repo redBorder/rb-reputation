@@ -24,22 +24,19 @@
 <log4j:configuration xmlns:log4j="http://jakarta.apache.org/log4j/">
 
     <!-- General application log -->
-    <appender name="ReputationEngine" class="org.apache.log4j.DailyRollingFileAppender">
+    <appender name="ReputationEngine" class="org.apache.log4j.FileAppender">
         <param name="File" value="/var/log/rb-reputation/current"/>
-        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
-        <param name="MaxBackupIndex" value="5"/>
-        <param name="MaxFileSize" value="50MB"/>
+        <param name="append" value="true" />
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %-5p %c{1}:%L - %m%n"/>
         </layout>
     </appender>
 
     <!-- Environment log-->
-    <appender name="Audit" class="org.apache.log4j.DailyRollingFileAppender">
+    <appender name="Audit" class="org.apache.log4j.FileAppender">
         <param name="File" value="/var/log/rb-reputation/audit"/>
-        <param name="DatePattern" value="'.'yyyy-MM-dd"/>
-        <param name="MaxBackupIndex" value="5"/>
-        <param name="MaxFileSize" value="50MB"/>
+        <param name="append" value="true" />
+
         <layout class="org.apache.log4j.PatternLayout">
             <param name="ConversionPattern" value="%d{yyyy-MM-dd HH:mm:ss} %C{1} [%p] : %m%n"/>
         </layout>
