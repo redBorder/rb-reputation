@@ -5,3 +5,8 @@ pom.xml.releaseBackup
 release.properties
 test
 .DS_Store
+
+# SOURCES and pkgs
+SOURCES
+pkgs
+
