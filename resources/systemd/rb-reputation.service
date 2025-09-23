@@ -1,0 +1,10 @@
+[Unit]
+Description=rb-reputation daemon
+
+[Service]
+User=root
+EnvironmentFile=/etc/rb-reputation/init_options.sh
+ExecStart=java $JVM_OPTS -jar /opt/rb-reputation/app/rb-reputation.jar 
+
+[Install]
+WantedBy=multi-user.target
