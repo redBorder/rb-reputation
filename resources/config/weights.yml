@@ -1,0 +1,24 @@
+hash:
+  g_rt_score: 1 
+  g_fb_score: 0 
+  g_sb_score: 0 
+  rt_virustotal: 0.5 
+  rt_metascan: 0.5 
+  fb_virustotal: 0.4 
+  fb_metascan: 0.25 
+  fb_clamscan: 0.25 
+  fb_yara: 0.1 
+  sb_fuzzy: 0.5 
+  sb_cuckoo: 0.5 
+ip:
+  g_rt_score: 1
+  g_fb_score: 0
+  g_sb_score: 0
+  rt_otx: 0.5
+  rt_metascan: 0.5
+url:
+  g_rt_score: 1
+  g_fb_score: 0
+  g_sb_score: 0
+  rt_metascan: 0.5
+  rt_virustotal: 0.5
