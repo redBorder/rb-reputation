@@ -1,14 +1,16 @@
+# How to install
 
-How to install
-==============
+```bash
 mvn install:install-file \
   -Dfile=resources/maven/VirustotalPublicV2.0-2.0.jar \
   -DgroupId=com.kanishka.api \
   -DartifactId=VirustotalPublicV2.0 \
   -Dversion=2.0 \
   -Dpackaging=jar
+```
 
-How to create maven package
-============================
+# How to create maven package
+
+```bash
 mvn package
-
+```
